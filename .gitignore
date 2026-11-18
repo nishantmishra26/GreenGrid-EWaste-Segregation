@@ -1,0 +1,224 @@
+# =============================================================================
+# GreenGrid v2.0 — Root .gitignore
+# =============================================================================
+# Excludes secrets, environments, caches, build artifacts, datasets, and large files
+# Model files (.keras) are tracked via Git LFS — see .gitattributes
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# SECRETS & ENVIRONMENT
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.production
+.env.*.local
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+*.secret
+
+# -----------------------------------------------------------------------------
+# PYTHON / BACKEND
+# -----------------------------------------------------------------------------
+# Virtual environments
+venv/
+venv-*/
+env/
+env-*/
+.venv/
+virtualenv/
+pipenv/
+poetry.lock
+__pypackages__/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pycache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+*.ipynb
+# Exception: keep training notebooks if needed for docs
+# !*.ipynb
+
+# TensorFlow / Keras
+*.h5
+*.keras
+# Exception: model files in models/ are tracked via Git LFS
+# !models/*.keras
+
+# -----------------------------------------------------------------------------
+# NODE / FRONTEND
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+.next/
+out/
+*.local
+
+# Vite / Turbo
+.vite/
+.turbo/
+
+# TypeScript
+*.tsbuildinfo
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+# Exception: keep lockfiles for reproducible builds
+# !package-lock.json
+
+# -----------------------------------------------------------------------------
+# EDITOR & IDE
+# -----------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.vs/
+
+# -----------------------------------------------------------------------------
+# OS & FILESYSTEM
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# LOGS & TEMP FILES
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+*.pid
+*.seed
+*.bak
+*.backup
+
+# -----------------------------------------------------------------------------
+# DATASETS & MODELS (large files)
+# -----------------------------------------------------------------------------
+# Datasets (downloaded/generated locally)
+data/
+datasets/
+dataset/
+ewaste_split/
+Dataset/
+train/
+val/
+test/
+*.tfrecord
+*.npy
+*.npz
+*.pickle
+*.pkl
+
+# Model checkpoints & weights (except those in models/ via Git LFS)
+checkpoints/
+weights/
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.tflite
+*.pb
+*.pmml
+
+# -----------------------------------------------------------------------------
+# DOCKER & DEPLOYMENT
+# -----------------------------------------------------------------------------
+.docker/
+docker-compose.override.yml
+.dockerignore
+.kube/
+.helm/
+*.kubeconfig
+
+# -----------------------------------------------------------------------------
+# CI/CD & TESTING
+# -----------------------------------------------------------------------------
+.nyc_output/
+.coveragerc
+.tox/
+.nox/
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+.test-results/
+playwright-report/
+test-results/
+*.trx
+*.xml
+
+# -----------------------------------------------------------------------------
+# DOCUMENTATION & EXPORTS
+# -----------------------------------------------------------------------------
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.xlsx
+# Exception: keep README and docs
+# !README.md
+# !docs/
+
+# -----------------------------------------------------------------------------
+# MISCELLANEOUS
+# -----------------------------------------------------------------------------
+# Local config overrides
+local.config.js
+local.config.ts
+*.local.js
+*.local.ts
+
+# OS/editor temp files
+*.orig
+*.rej
+.*.sw[a-z]
+*~
